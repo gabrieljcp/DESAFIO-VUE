@@ -1,6 +1,5 @@
 <script setup>
 import { inject, reactive, onMounted, getCurrentInstance } from "vue";
-import { InitCustom } from "./scripts/index";
 import "@melloware/coloris/dist/coloris.css";
 import Coloris from "@melloware/coloris";
 
@@ -346,5 +345,6 @@ onMounted(async () => {
         </div>
       </div>
     </section>
+    <CustomHandler :toast="toast" :state="state" :localOpt="localOpt" />
   </div>
 </template>

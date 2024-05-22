@@ -1,30 +1,13 @@
-# Desafio Técnico para Desenvolvedor Fullstack Pleno (Vue e Laravel)
+# Projeto Vue.js com Utilitários Modularizados
 
-Como desenvolvedor fullstack pleno com ênfase em Vue e Laravel, esperamos que você compreenda profundamente a estrutura e os recursos do Vue.js.
+Para melhorar o código e demonstrar como a reatividade pode ser implementada diretamente no Vue.js, criei módulos separados para cada funcionalidade e os utilizei no componente principal (`index.vue`). Em seguida, criei o componente `CustomHandler.vue` para gerenciar todas essas funcionalidades e interagir com o estado, cujo objetivo é encapsular todas as funcionalidades que originalmente estavam no `InitCustom` e modularizá-las, de forma que cada funcionalidade seja gerenciada separadamente, mantendo o código mais organizado e reutilizável.
 
-Para este desafio, extraímos um código legado que mistura JavaScript nativo com Vue, mas sem explorar todo o potencial do Vue. Seu principal objetivo será isolar a função `initCustom` que trabalha com CommonJS e reescrevê-la parcialmente utilizando Vue.js para alcançar o mesmo resultado.
+Utilizei o hook `onMounted` para executar o código quando o componente é montado, obter as referências dos elementos no DOM usando o `getCurrentInstance` e chamar as funções necessárias, passando essas referências e outras dependências. Agora, no componente principal `index.vue`, importei e utilizei o `CustomHandler` para gerenciar toda a lógica de manipulação e estilos. Isso mantém o `index.vue` limpo e focado na estrutura de layout e integração dos componentes.
 
-## Instruções:
+## Vantagens dessa Abordagem
 
-1. **Clone o Repositório**: Clone o repositório do GitHub ou visualize-o diretamente na plataforma.
-2. **Acesse o Arquivo**: Abra o arquivo `index.vue`.
-3. **Conteúdo HTML e Script Setup**: Dentro do `index.vue`, você encontrará conteúdo HTML utilizando `script setup` com Vue 3.
-4. **Referência ao Arquivo Scripts**: O conteúdo é baseado em um arquivo dentro de `scripts` chamado `scripts/index.js`.
-5. **Simulação de Reatividade**: O script atual realiza ações na página, simulando "reatividade".
-
-## Objetivo:
-
-Seu objetivo é demonstrar, através de código, como essa reatividade pode ser implementada diretamente no Vue.js, eliminando a necessidade do código legado (script/index.js).
-
-## Requisitos:
-
-- **Foco na Lógica e Conhecimentos de Vue**: Não é necessário trabalhar aspectos visuais, apenas a lógica e os recursos do Vue.js.
-- **Demonstração de Melhorias**: Explique como você aproveitou os recursos do Vue.js para melhorar o código, tanto no código quanto em uma call de apresentação.
-
-## O que será Avaliado:
-
-- Capacidade de isolar e refatorar funções utilizando Vue.js.
-- Entendimento profundo dos recursos do Vue.js e como aplicá-los de forma eficiente.
-- Clareza e qualidade na explicação das soluções implementadas.
-
-Esperamos que esta atividade lhe permita demonstrar sua habilidade com Vue.js e sua capacidade de transformar código legado em soluções modernas e eficientes. Boa sorte!
+- **Organização:** Mantém o código bem estruturado, separando a lógica de apresentação da lógica de manipulação.
+- **Reutilização:** Facilita a reutilização das funções em diferentes componentes ou contextos.
+- **Manutenção:** Torna o código mais fácil de manter e atualizar, pois cada módulo tem uma responsabilidade clara e específica.
+- **Escalabilidade:** Facilita a adição de novas funcionalidades sem tornar o componente principal muito complexo.
+- **Eficiência:** Modulariza o código legado e o integra de forma mais eficiente no projeto, aproveitando ao máximo os recursos de reatividade e componentes do Vue.js.
